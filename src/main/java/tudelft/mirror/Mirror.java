@@ -8,6 +8,7 @@ public class Mirror {
         int begin = 0;
         int end = string.length() - 1;
         for (; begin < end; begin++, end--) {
+            System.out.println("begin:"+begin+" end:"+end);
             if (string.charAt(begin) == string.charAt(end)) {
                 mirror += String.valueOf(string.charAt(end));
             }
@@ -16,6 +17,15 @@ public class Mirror {
             }
         }
 
-        return begin == end ? string : mirror;
+
+        if(string.length()%2==0 && begin==string.length()/2)
+            return string;
+        else if(string.length()%2==1 && begin==end)
+            return string;
+        else
+            return mirror;
+
+
+        //return begin == end ? string : mirror;
     }
 }
